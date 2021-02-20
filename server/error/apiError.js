@@ -5,6 +5,11 @@ class ApiError extends Error {
         this.message = message
     }
 
+     
+    static unauthorized(message) {
+        return new ApiError(401, message)
+    }
+
     static badRequest(message) {
         return new ApiError(404, message)
     }

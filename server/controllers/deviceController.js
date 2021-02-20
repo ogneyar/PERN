@@ -5,7 +5,7 @@ const path = require('path')
 
 
 class DeviceController {
-    async create(req, res) {
+    async create(req, res, next) {
        try {
         let {name, price, brandId, typeId, info} = req.body
         const {img} = req.files
@@ -25,7 +25,7 @@ class DeviceController {
 
         return res.json(device)
        }catch (e) {
-           next(ApiError.badRequest(e.message))
+           return next(ApiError.badRequest(e.message))
        }
     }
 
