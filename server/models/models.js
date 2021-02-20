@@ -1,4 +1,4 @@
-const sequelize = require('./db')
+const sequelize = require('../db')
 const {DataTypes} = require('sequelize')
 
 const User = sequelize.define('user', {
@@ -58,19 +58,19 @@ Rating.belongsTo(User)
 Basket.hasMany(BasketDevice)
 BasketDevice.belongsTo(Basket)
 
-Type.hasOne(Device)
+Type.hasMany(Device)
 Device.belongsTo(Type)
 
-Brand.hasOne(Device)
+Brand.hasMany(Device)
 Device.belongsTo(Brand)
 
-Device.hasOne(Rating)
+Device.hasMany(Rating)
 Rating.belongsTo(Device)
 
-Device.hasOne(BasketDevice)
+Device.hasMany(BasketDevice)
 BasketDevice.belongsTo(Device)
 
-Device.hasOne(DeviceInfo)
+Device.hasMany(DeviceInfo)
 DeviceInfo.belongsTo(Device)
 
 Type.belongsToMany(Brand, {through: TypeBrand})
