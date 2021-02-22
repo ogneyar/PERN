@@ -39,7 +39,7 @@ const Auth = () => {
                             variant={"outline-success"} 
                             // className="mt-3 align-self-end"
                         >
-                            Войти
+                            {isLogin ? 'Войти' : 'Регистрация'}
                         </Button>
                     </Row>
                     
