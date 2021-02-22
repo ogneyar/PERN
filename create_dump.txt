@@ -1,0 +1,5 @@
+// create dump all database
+pg_basebackup --format=tar -U postgres -D ./backup
+
+// create dump onli pern db
+pg_dump -U postgres pern > pern.dump
