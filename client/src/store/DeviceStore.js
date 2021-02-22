@@ -19,6 +19,10 @@ export default class DeviceStore {
             {id: 2, name: "Nokia 3310", price: 2000, rating: 5, img: "https://lastprint.ru/image/constructor_avatar_cache/product_49948_202_0_0.jpg"},
             {id: 3, name: "Nokia 3310", price: 2000, rating: 5, img: "https://lastprint.ru/image/constructor_avatar_cache/product_49948_202_0_0.jpg"},
             {id: 4, name: "Nokia 3310", price: 2000, rating: 5, img: "https://lastprint.ru/image/constructor_avatar_cache/product_49948_202_0_0.jpg"},
+            {id: 5, name: "Nokia 3310", price: 2000, rating: 5, img: "https://lastprint.ru/image/constructor_avatar_cache/product_49948_202_0_0.jpg"},
+            {id: 6, name: "Nokia 3310", price: 2000, rating: 5, img: "https://lastprint.ru/image/constructor_avatar_cache/product_49948_202_0_0.jpg"},
+            {id: 7, name: "Nokia 3310", price: 2000, rating: 5, img: "https://lastprint.ru/image/constructor_avatar_cache/product_49948_202_0_0.jpg"},
+            {id: 8, name: "Nokia 3310", price: 2000, rating: 5, img: "https://lastprint.ru/image/constructor_avatar_cache/product_49948_202_0_0.jpg"},
         ]
         this._selectedType = {}
         this._selectedBrand = {}
