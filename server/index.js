@@ -16,9 +16,9 @@ app.use(express.json())
 app.use(express.static(path.resolve(__dirname, 'static')))
 app.use(fileUpload({}))
 app.use('/api', router)
-// app.get('/', (req, res) => {
-//     res.send("PERN - приветствует тебя!")
-// })
+app.get('/', (req, res) => {
+    res.send("PERN server - приветствует тебя!")
+})
 
 // Обработка ошибок, последний middleware
 app.use(errorHandler)
