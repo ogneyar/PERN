@@ -3,3 +3,6 @@ pg_basebackup --format=tar -U postgres -D ./backup
 
 // create dump only pern db
 pg_dump -U postgres pern > pern.dump
+
+// upload dump
+psql -d pern -U postgres -f pern.dump
