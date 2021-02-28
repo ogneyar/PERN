@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Row, Col } from 'react-bootstrap'
+import { Container, Row, Col, Pagination } from 'react-bootstrap'
 import TypeBar from '../components/TypeBar'
 import BrandBar from '../components/BrandBar'
 import DeviceList from '../components/DeviceList'
@@ -8,6 +8,7 @@ import { useContext } from 'react'
 import { Context } from '..'
 import { useEffect } from 'react'
 import {fetchBrands, fetchTypes, fetchDevices} from '../http/deviceAPI'
+import Pages from '../components/Pages'
 
 
 const Shop = observer(() => {
@@ -16,8 +17,18 @@ const Shop = observer(() => {
     useEffect(() => {
         fetchTypes().then(data => device.setTypes(data))
         fetchBrands().then(data => device.setBrands(data))
-        fetchDevices().then(data => device.setDevices(data.rows))
+        fetchDevices(null, null, 1, 2).then(data => {
+            device.setDevices(data.rows)
+            device.setTotalCount(data.count)
+        })
     },[])
+
+    useEffect(() => {
+        fetchDevices(device.selectedType.id, device.selectedBrand.id, device.page, 2).then(data => {
+            device.setDevices(data.rows)
+            device.setTotalCount(data.count)
+        })
+    },[device.page, device.selectedType, device.selectedBrand])
 
     return (
         <Container>
@@ -25,9 +36,10 @@ const Shop = observer(() => {
                 <Col md={3}>
                     <TypeBar />
                 </Col>
-                <Col md={9}>                    
+                <Col md={9}>
                     <BrandBar />
                     <DeviceList />
+                    <Pages />
                 </Col>
             </Row>
         </Container>

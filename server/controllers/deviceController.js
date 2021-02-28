@@ -15,11 +15,11 @@ class DeviceController {
         const device = await Device.create({name, price, brandId, typeId, img: fileName})
 
         if (info) {
-            info.JSON.parse(info)
-            info.forEach(i => DeviceInfo.create({
+            let inf = JSON.parse(info)
+            inf.forEach(i => DeviceInfo.create({
                 title: i.title,
                 description: i.description,
-                deviceId: device.id
+                deviceId: device.id 
             }))
         }
 

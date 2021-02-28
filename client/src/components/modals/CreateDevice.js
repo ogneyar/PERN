@@ -102,7 +102,7 @@ const CreateDevice = observer(({show, onHide}) => {
                         type="number"
                     />
                     <Form.Control 
-                        className='mt-3'                        
+                        className='mt-3'
                         type="file"
                         onChange={selectFile}
                     />
@@ -122,13 +122,13 @@ const CreateDevice = observer(({show, onHide}) => {
                                 <Form.Control    
                                     value={i.title}
                                     onChange={(e) => changeInfo('title', e.target.value, i.number)}
-                                    placeholder={'Введите название свойства'}                                    
+                                    placeholder={'Введите название свойства'}
                                 />
                             </Col>
                             <Col md={4}>
                                 <Form.Control   
                                     value={i.description}    
-                                    onChange={(e) => changeInfo('description', e.target.value, i.number)}                              
+                                    onChange={(e) => changeInfo('description', e.target.value, i.number)}
                                     placeholder={'Введите описание свойства'}
                                 />
                             </Col>
