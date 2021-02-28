@@ -31,7 +31,7 @@ const CreateBrand = ({show, onHide}) => {
                         onChange={e => setValue(e.target.value)}
                         placeholder={'Введите название бренда'}
                     />
-                </Form>            
+                </Form>
             </Modal.Body>
             <Modal.Footer>
                 <Button variant="outline-danger" onClick={onHide}>Закрыть</Button>

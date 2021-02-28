@@ -20,6 +20,8 @@ const Shop = observer(() => {
         fetchDevices(null, null, 1, 2).then(data => {
             device.setDevices(data.rows)
             device.setTotalCount(data.count)
+            device.setSelectedType({})
+            device.setSelectedBrand({})
         })
     },[])
 
