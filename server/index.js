@@ -19,6 +19,9 @@ app.use('/api', router)
 app.get('/', (req, res) => {
     res.send("PERN server - приветствует тебя!")
 })
+app.get('/undefined', (req, res) => {
+    res.status(200)
+})
 
 // Обработка ошибок, последний middleware
 app.use(errorHandler)

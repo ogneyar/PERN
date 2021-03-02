@@ -70,7 +70,6 @@ const Auth = observer(() => {
                         <Button 
                             variant={"outline-success"} 
                             onClick={click}
-                            // className="mt-3 align-self-end"
                         >
                             {isLogin ? 'Войти' : 'Регистрация'}
                         </Button>

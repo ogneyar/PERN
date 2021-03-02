@@ -1,27 +1,25 @@
 import React, { useContext, useState, useEffect } from 'react'
 import {Modal, Button, Form, Row, Col} from 'react-bootstrap'
 import { Context } from '../..'
-import { fetchDevices, deleteDevice } from '../../http/deviceAPI'
+import { fetchBrands, deleteBrand } from '../../http/deviceAPI'
 import { observer } from 'mobx-react-lite'
 
 
-const DeleteDevice = observer(({show, onHide}) => {
+const DeleteBrand = observer(({show, onHide}) => {
     const {device} = useContext(Context)
     const [info, setInfo] = useState([])
 
     useEffect(() => {
-        fetchDevices().then(data => {
-            device.setDevices(data)
-            setInfo(device.devices.rows)
+        fetchBrands().then(data => {
+            device.setBrands(data)
+            setInfo(device.brands)
         })
     },[])
 
-    const removeInfo = (number) => {
-        setInfo(info.filter(i => i.number !== number))
-    }
+    const removeInfo = (number) => setInfo(info.filter(i => i.number !== number))
 
     const hideAndDelete = (id) => {
-        deleteDevice(id)
+        deleteBrand(id)
         removeInfo(id)
         onHide()
     }
@@ -37,7 +35,7 @@ const DeleteDevice = observer(({show, onHide}) => {
         >
             <Modal.Header closeButton>
                 <Modal.Title id="contained-modal-title-vcenter">
-                    Удалить устройство
+                    Удалить бренд
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
@@ -50,9 +48,7 @@ const DeleteDevice = observer(({show, onHide}) => {
                             <Col md={4}>
                                 {i.name}
                             </Col>
-                            <Col md={4}>
-                                {i.img}
-                            </Col>
+                            
                             <Col md={4}>
                                 <Button
                                     variant="outline-danger"
@@ -72,4 +68,4 @@ const DeleteDevice = observer(({show, onHide}) => {
     )
 })
 
-export default DeleteDevice
+export default DeleteBrand

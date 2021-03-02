@@ -5,11 +5,11 @@ import {useParams} from 'react-router-dom'
 import { fetchOneDevice } from '../http/deviceAPI'
 
 const Device = () => {
-    const [device, setdevice] = useState({info: []})
+    const [device, setDevice] = useState({info: []})
     const {id} = useParams()    
 
     useEffect(() => {
-        fetchOneDevice(id).then(data => setdevice(data))
+        fetchOneDevice(id).then(data => setDevice(data))
     },[])
     
     return (

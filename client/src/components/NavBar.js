@@ -7,7 +7,7 @@ import { observer } from 'mobx-react-lite'
 
 
 const NavBar = observer(() => {
-    const { user, device } = useContext(Context)
+    const { user } = useContext(Context)
     const history = useHistory()
 
     const logOut = () => {
@@ -16,19 +16,12 @@ const NavBar = observer(() => {
         localStorage.setItem('token', {})
     }
 
-    const reset = () => {
-        // device.setSelectedType({})
-        // device.setSelectedBrand({})
-        console.log(device);
-    }
-
     return (
         <Navbar bg="dark" variant="dark" className="NavBar">
             <Container>
                 <NavLink 
                     style={{color: 'white'}} 
                     to={SHOP_ROUTE}
-                    onClick={reset}
                 >
                     КупиДевайс
                 </NavLink>

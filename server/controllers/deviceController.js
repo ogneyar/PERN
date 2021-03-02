@@ -2,6 +2,7 @@ const {Device, DeviceInfo} = require('../models/models')
 const ApiError = require('../error/apiError')
 const uuid = require('uuid')
 const path = require('path')
+const fs = require('fs')
 
 
 class DeviceController {
@@ -61,10 +62,19 @@ class DeviceController {
 
     async delete(req, res) {
         const {id} = req.params
-        const device = await Device.destroy({
+        const device = await Device.findOne({
+            where: {id}
+        })        
+      
+        fs.unlinkSync(path.resolve(__dirname, '..', 'static', device.img))
+
+        await DeviceInfo.destroy({
+            where: {deviceId: id}
+        })
+        const response = await Device.destroy({
             where: {id}
         })
-        return res.json(device)
+        return res.json(response)
     }
 
 }
