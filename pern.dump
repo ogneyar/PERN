@@ -450,6 +450,9 @@ COPY public.baskets (id, "createdAt", "updatedAt", "userId") FROM stdin;
 1	2021-02-20 22:01:55.139+03	2021-02-20 22:01:55.139+03	1
 2	2021-02-20 22:11:58.666+03	2021-02-20 22:11:58.666+03	2
 3	2021-02-20 22:57:03.809+03	2021-02-20 22:57:03.809+03	3
+4	2021-02-26 22:12:05.49+03	2021-02-26 22:12:05.49+03	4
+5	2021-02-26 22:12:31.716+03	2021-02-26 22:12:31.716+03	5
+6	2021-02-26 22:24:11.352+03	2021-02-26 22:24:11.352+03	6
 \.
 
 
@@ -460,7 +463,8 @@ COPY public.baskets (id, "createdAt", "updatedAt", "userId") FROM stdin;
 COPY public.brands (id, name, "createdAt", "updatedAt") FROM stdin;
 1	Samsung	2021-02-20 20:31:50.825+03	2021-02-20 20:31:50.825+03
 2	Nokia	2021-02-20 20:32:01.085+03	2021-02-20 20:32:01.085+03
-3	Lg	2021-02-28 14:22:24.006+03	2021-02-28 14:22:24.006+03
+4	Lg	2021-03-02 19:20:44.466+03	2021-03-02 19:20:44.466+03
+5	Panasonic	2021-03-02 19:21:14.995+03	2021-03-02 19:21:14.995+03
 \.
 
 
@@ -469,14 +473,15 @@ COPY public.brands (id, name, "createdAt", "updatedAt") FROM stdin;
 --
 
 COPY public.device_infos (id, title, description, "createdAt", "updatedAt", "deviceId") FROM stdin;
-1	jjj	lllllll	2021-02-28 12:50:18.774+03	2021-02-28 12:50:18.774+03	\N
-2	Вес	100гр	2021-02-28 13:10:19.19+03	2021-02-28 13:10:19.19+03	\N
-3	Цвет	Синий	2021-02-28 13:10:19.19+03	2021-02-28 13:10:19.19+03	\N
-4	Экран	5'	2021-02-28 13:10:19.19+03	2021-02-28 13:10:19.19+03	\N
-5	Цвет	Белый	2021-02-28 14:28:47.566+03	2021-02-28 14:28:47.566+03	18
-6	Высота	2метра	2021-02-28 14:28:47.567+03	2021-02-28 14:28:47.567+03	18
-7	Ширина	0,5метра	2021-02-28 14:28:47.567+03	2021-02-28 14:28:47.567+03	18
-8	Мотор	2шт	2021-02-28 14:28:47.567+03	2021-02-28 14:28:47.567+03	18
+9	Цвет	Красный	2021-03-02 18:48:44.202+03	2021-03-02 18:48:44.202+03	24
+10	Разрешение	Да	2021-03-02 18:48:44.202+03	2021-03-02 18:48:44.202+03	24
+11	Цвет	Белый	2021-03-02 19:34:03.959+03	2021-03-02 19:34:03.959+03	25
+12	Экран	7'	2021-03-02 19:34:03.96+03	2021-03-02 19:34:03.96+03	25
+13	Цвет	Чёрный	2021-03-02 19:36:06.234+03	2021-03-02 19:36:06.234+03	26
+14	Экран	9'	2021-03-02 19:36:06.234+03	2021-03-02 19:36:06.234+03	26
+15	Цвет	Серый	2021-03-02 19:37:30.601+03	2021-03-02 19:37:30.601+03	27
+16	Экран	10'	2021-03-02 19:37:30.601+03	2021-03-02 19:37:30.601+03	27
+17	Вес	500гр	2021-03-02 19:37:30.601+03	2021-03-02 19:37:30.601+03	27
 \.
 
 
@@ -486,7 +491,12 @@ COPY public.device_infos (id, title, description, "createdAt", "updatedAt", "dev
 
 COPY public.devices (id, name, price, rating, img, "createdAt", "updatedAt", "typeId", "brandId") FROM stdin;
 1	3310	2000	0	8c9ac833-07e9-4dba-8b6c-0c5b2ae79e38.jpg	2021-02-20 21:00:27.681+03	2021-02-20 21:00:27.681+03	3	2
-18	LG frost cool	15000	0	219abb84-b4bc-410e-95bc-88bba40730f4.jpg	2021-02-28 14:28:47.501+03	2021-02-28 14:28:47.501+03	1	3
+3	frost -30	2000	0	3dff8fa1-6f37-4236-8159-59f1d48cbf4d.jpg	2021-02-20 21:12:24.306+03	2021-02-20 21:12:24.306+03	1	1
+4	Астор	10000	0	ce1b721e-bd5e-45db-892a-5bc60f336195.jpg	2021-02-27 00:58:00.176+03	2021-02-27 00:58:00.176+03	1	1
+24	Flatron	150000	0	9da263b0-7fc5-4178-b694-3f52a1a1d001.jpg	2021-03-02 18:48:43.687+03	2021-03-02 18:48:43.687+03	2	1
+25	J2	7000	0	dbfe46c9-4c83-4736-a032-fca2370869f9.jpg	2021-03-02 19:34:03.888+03	2021-03-02 19:34:03.888+03	3	1
+26	J5	10000	0	c8c8f0d5-bb68-44f6-91bc-f8324851dfc5.jpg	2021-03-02 19:36:06.19+03	2021-03-02 19:36:06.19+03	3	1
+27	A10	20000	0	ebe03d18-2628-40a8-8611-60f1965dca2d.jpg	2021-03-02 19:37:30.546+03	2021-03-02 19:37:30.546+03	3	1
 \.
 
 
@@ -514,7 +524,7 @@ COPY public.types (id, name, "createdAt", "updatedAt") FROM stdin;
 1	Холодильники	2021-02-20 20:21:41.3+03	2021-02-20 20:21:41.3+03
 2	Телевизоры	2021-02-20 20:22:00.543+03	2021-02-20 20:22:00.543+03
 3	Смартфоны	2021-02-20 20:58:01.473+03	2021-02-20 20:58:01.473+03
-4	m@ma.r	2021-02-20 22:57:38.182+03	2021-02-20 22:57:38.182+03
+5	Кондиционеры	2021-02-27 00:17:30.543+03	2021-02-27 00:17:30.543+03
 \.
 
 
@@ -526,6 +536,9 @@ COPY public.users (id, email, password, role, "createdAt", "updatedAt") FROM std
 1	m@m.r	$2b$05$kBMfkAepCcBkpA8e.gmRvukq4XzUXPa/bP59/lZ2gMS6ldtVjJA1S	USER	2021-02-20 22:01:55.114+03	2021-02-20 22:01:55.114+03
 2	m@ma.r	$2b$05$YncJJusIoDD7e17z8cYpyOY4EYCnzYOKd2xQ1MD2vC8C64djMhwRa	USER	2021-02-20 22:11:58.648+03	2021-02-20 22:11:58.648+03
 3	admin@mail.ru	$2b$05$bG9sWkEV0HTJaC.by1b6keYR5dGDiw.qXhUgV4mHOrkrPAPwR5fcK	ADMIN	2021-02-20 22:57:03.793+03	2021-02-20 22:57:03.793+03
+4	fff@mail.ru	$2b$05$4wlmEI12tIsCKSYOBcEfkO3If1XtvGYwYNY72Z5qktkanzK5eE96C	ADMIN	2021-02-26 22:12:05.324+03	2021-02-26 22:12:05.324+03
+5	base@mail.ru	$2b$05$rLIxrUElZ1xuHTms6Dfvwemh0U.JWpr2LSW54n5hPiJZ3WkLsdLHC	ADMIN	2021-02-26 22:12:31.713+03	2021-02-26 22:12:31.713+03
+6	aaa@mail.ru	$2b$05$IY/QpgzXchKYB101p4L1d.fCERsEcs5um1oDa9VdEYXTRxXVxJOFO	ADMIN	2021-02-26 22:24:11.325+03	2021-02-26 22:24:11.325+03
 \.
 
 
@@ -547,21 +560,21 @@ SELECT pg_catalog.setval('public.baskets_id_seq', 3, true);
 -- Name: brands_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.brands_id_seq', 3, true);
+SELECT pg_catalog.setval('public.brands_id_seq', 5, true);
 
 
 --
 -- Name: device_infos_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.device_infos_id_seq', 8, true);
+SELECT pg_catalog.setval('public.device_infos_id_seq', 17, true);
 
 
 --
 -- Name: devices_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.devices_id_seq', 23, true);
+SELECT pg_catalog.setval('public.devices_id_seq', 27, true);
 
 
 --
@@ -726,14 +739,6 @@ ALTER TABLE ONLY public.basket_devices
 
 ALTER TABLE ONLY public.baskets
     ADD CONSTRAINT "baskets_userId_fkey" FOREIGN KEY ("userId") REFERENCES public.users(id) ON UPDATE CASCADE ON DELETE SET NULL;
-
-
---
--- Name: device_infos device_infos_deviceId_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY public.device_infos
-    ADD CONSTRAINT "device_infos_deviceId_fkey" FOREIGN KEY ("deviceId") REFERENCES public.devices(id) ON UPDATE CASCADE ON DELETE SET NULL;
 
 
 --
