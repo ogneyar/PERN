@@ -25,14 +25,13 @@ const Auth = observer(() => {
             }
             user.setUser(data)
             user.setIsAuth(true)
+            
+            // window.location.href = window.location.origin
+            
             history.push(SHOP_ROUTE)
         }catch(e) {
             alert(e.response.data.message)
         }
-        
-        
-        
-        // return response
     }
 
     return (

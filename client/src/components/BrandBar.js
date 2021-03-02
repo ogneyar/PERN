@@ -6,7 +6,7 @@ import { Row, Card } from 'react-bootstrap'
 const BrandBar =  observer(() => {
     const {device} = useContext(Context)
     return (
-        <Row className='d-flex'>
+        <Row className='d-flex mt-3 ml-0'>
             <Card
                 style={{cursor: "pointer"}}
                 border={undefined === device.selectedBrand.id ? 'danger' : 'light'}
