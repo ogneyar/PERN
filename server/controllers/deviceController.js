@@ -66,7 +66,12 @@ class DeviceController {
             where: {id}
         })        
       
-        fs.unlinkSync(path.resolve(__dirname, '..', 'static', device.img))
+        try {
+            fs.unlinkSync(path.resolve(__dirname, '..', 'static', device.img))
+        }catch(e) {
+            console.log("Удаляемый файл не найден.");
+        }
+        
 
         await DeviceInfo.destroy({
             where: {deviceId: id}
